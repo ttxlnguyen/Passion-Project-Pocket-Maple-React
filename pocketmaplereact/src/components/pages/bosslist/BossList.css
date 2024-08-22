@@ -1,59 +1,65 @@
 .boss-list {
-    margin: 20px;
-    margin-top: 90px;
-    padding: 10px;
-    border: 1px solid #898989;
-    border-radius: 4px;
-    background-color: #000000;
-  }
-  
-  .boss-list h2 {
-    color: #d3d3d3;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #222222;
-    color: #919191;
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #454545;
-  }
-  
-  th {
-    background-color: #121212;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #121212;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #191919;
-  }
-  
-  tr:hover {
-    background-color: #303030;
-  }
-
-  select {
-    background-color: #222222; /* Dark grey background */
-    color: #919191; /* Light grey text color */
-    border: 1px solid #454545; /* Border matching the table rows */
-    border-radius: 4px;
-    padding: 4px; /* Padding for better spacing */
-    width: 30%; /* Make the dropdown fit the table cell */
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  margin: 20px;
+  margin-top: 90px;
+  padding: 10px;
+  border: 1px solid #898989;
+  border-radius: 4px;
+  background-color: #000000;
+  overflow-x: auto;
 }
-  
-  input[type="checkbox"] {
-    margin: 0;
-  }
+
+.boss-list h2 {
+  color: #d3d3d3;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #222222;
+  color: #919191;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #454545;
+}
+
+th {
+  background-color: #121212;
+}
+
+tr:nth-child(even) {
+  background-color: #121212;
+}
+
+tr:nth-child(odd) {
+  background-color: #191919;
+}
+
+tr:hover {
+  background-color: #303030;
+}
+
+select {
+  background-color: #222222;
+  color: #919191;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  padding: 4px;
+  width: 60px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+}

@@ -22,20 +22,16 @@ const Bosses = () => {
 
   // Function to create dropdown options for Clear Count (1-7)
   const createClearCountOptions = () => {
-    let options = [];
-    for (let i = 1; i <= 7; i++) {
-      options.push(<option key={i} value={i}>{i}</option>);
-    }
-    return options;
+    return Array.from({ length: 7 }, (_, i) => (
+      <option key={i + 1} value={i + 1}>{i + 1}</option>
+    ));
   };
 
   // Function to create dropdown options for Party Size (1-6)
   const createPartySizeOptions = () => {
-    let options = [];
-    for (let i = 1; i <= 6; i++) {
-      options.push(<option key={i} value={i}>{i}</option>);
-    }
-    return options;
+    return Array.from({ length: 6 }, (_, i) => (
+      <option key={i + 1} value={i + 1}>{i + 1}</option>
+    ));
   };
 
   // Handler for dropdown change for Clear Count
@@ -55,44 +51,46 @@ const Bosses = () => {
   return (
     <div className="boss-list">
       <h2>Daily Bosses</h2> {/* Table title */}
-      <table>
-        <thead>
-          <tr> {/* Column Headers */}
-            <th>Select</th>
-            <th>Boss Name</th>
-            <th>Clear Count</th>
-            <th>Party Size</th>
-            <th>Boss Value</th>
-            <th>Weekly Mesos</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bossData.map((boss, index) => (
-            <tr key={index}> {/* Column data */}
-              <td><input type="checkbox" /></td>
-              <td>{boss.name}</td>
-              <td>
-                <select
-                  value={boss.clearCount}
-                  onChange={(e) => handleClearCountChange(index, e.target.value)}
-                >
-                  {createClearCountOptions()}
-                </select>
-              </td>
-              <td>
-                <select
-                  value={boss.partySize}
-                  onChange={(e) => handlePartySizeChange(index, e.target.value)}
-                >
-                  {createPartySizeOptions()}
-                </select>
-              </td>
-              <td>{boss.value}</td>
-              <td>{boss.weeklyMesos}</td>
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr> {/* Column Headers */}
+              <th>Select</th>
+              <th>Boss Name</th>
+              <th>Clear Count</th>
+              <th>Party Size</th>
+              <th>Boss Value</th>
+              <th>Weekly Mesos</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {bossData.map((boss, index) => (
+              <tr key={index}> {/* Column data */}
+                <td><input type="checkbox" /></td>
+                <td>{boss.name}</td>
+                <td>
+                  <select
+                    value={boss.clearCount}
+                    onChange={(e) => handleClearCountChange(index, e.target.value)}
+                  >
+                    {createClearCountOptions()}
+                  </select>
+                </td>
+                <td>
+                  <select
+                    value={boss.partySize}
+                    onChange={(e) => handlePartySizeChange(index, e.target.value)}
+                  >
+                    {createPartySizeOptions()}
+                  </select>
+                </td>
+                <td>{boss.value}</td>
+                <td>{boss.weeklyMesos}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
