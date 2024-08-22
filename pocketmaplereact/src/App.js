@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar.jsx";
 import Home from "./components/pages/Home";
 import Characters from "./components/pages/Characters";
+import Bosses from "./components/pages/BossList.js";
 
 const App = () => {
   return (
@@ -12,9 +13,10 @@ const App = () => {
       <NavBar />
       <main className="main-content">
         <Routes>
+          {/* Define other routes that you need*/}
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters />} />
-          {/* Define other routes that you need*/}
+          <Route path="/bosses" element={<Bosses />} />
         </Routes>
       </main>
     </Router>

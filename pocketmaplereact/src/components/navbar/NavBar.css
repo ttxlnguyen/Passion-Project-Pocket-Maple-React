@@ -14,6 +14,7 @@
     position: relative;
     height: var(--header-height);
     margin: 1rem;
+    padding-left: 1rem;
   }
   
   .nav__logo {
@@ -81,6 +82,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 2.5rem;
+    padding-right: 1rem;
   }
   
   .nav__link {

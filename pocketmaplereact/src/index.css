@@ -2,19 +2,19 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
+  padding-left: 0px;
   margin: 0;
 }
 
 :root {
   --header-height: 3.5rem;
-  --first-color: hsl(28, 88%, 62%);
+  --first-color: hsl(330, 81%, 31%);
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 75%);
   --body-color: hsl(0, 0%, 6%);
   --body-font: "Montserrat", sans-serif;
   --second-font: "Dancing Script", cursive;
-  --h2-font-size: 1.25rem;
+  --h2-font-size: 2.5rem;
   --small-font-size: 0.813rem;
   --font-semi-bold: 600;
   --z-tooltip: 10;

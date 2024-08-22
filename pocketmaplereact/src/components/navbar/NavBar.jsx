@@ -27,11 +27,13 @@ const Navbar = () => {
           id="nav-menu"
         >
           <ul className="nav__list">
+
             <li className="nav__item">
               <NavLink to="/" className="nav__link" onClick={closeMenuOnMobile}>
                 Home
               </NavLink>
             </li>
+
             <li className="nav__item">
               <NavLink
                 to="/characters"
@@ -41,6 +43,17 @@ const Navbar = () => {
                 Characters
               </NavLink>
             </li>
+
+            <li className="nav__item">
+              <NavLink
+                to="/bosses"
+                className="nav__link"
+                onClick={closeMenuOnMobile}
+              >
+                Bosses
+              </NavLink>
+            </li>
+
           </ul>
           <div className="nav__close" id="nav-close" onClick={toggleMenu}>
             <IoClose />
