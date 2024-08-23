@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar.jsx";
-import Home from "./components/pages/Home";
-import Characters from "./components/pages/Characters";
+import Home from "./components/pages/home/Home.js";
+import Characters from "./components/pages/characters/Characters";
 import Bosses from "./components/pages/bosslist/BossList.jsx";
 
 const App = () => {
