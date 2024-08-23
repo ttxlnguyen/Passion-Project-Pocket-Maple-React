@@ -1,6 +1,5 @@
-// BossList.jsx
 import React, { useState } from 'react';
-import './BossList.css'; // Import the CSS file for styling
+import './BossList.css';
 import {
   createClearCountOptions,
   createPartySizeOptions,
@@ -9,22 +8,21 @@ import {
 } from './BossList.js';
 
 const Bosses = () => {
-  // State for boss data
   const [bossData, setBossData] = useState([
-    { name: 'Boss 1', clearCount: 5, partySize: 10, value: '$1000', weeklyMesos: '$7000' },
-    { name: 'Boss 2', clearCount: 8, partySize: 12, value: '$2000', weeklyMesos: '$14000' },
-    { name: 'Boss 3', clearCount: 10, partySize: 8, value: '$3000', weeklyMesos: '$21000' },
-    { name: 'Boss 4', clearCount: 7, partySize: 11, value: '$4000', weeklyMesos: '$28000' },
-    { name: 'Boss 5', clearCount: 6, partySize: 9, value: '$5000', weeklyMesos: '$35000' },
-    { name: 'Boss 6', clearCount: 9, partySize: 10, value: '$6000', weeklyMesos: '$42000' },
-    { name: 'Boss 7', clearCount: 5, partySize: 15, value: '$7000', weeklyMesos: '$49000' },
-    { name: 'Boss 8', clearCount: 12, partySize: 14, value: '$8000', weeklyMesos: '$56000' },
-    { name: 'Boss 9', clearCount: 11, partySize: 13, value: '$9000', weeklyMesos: '$63000' },
-    { name: 'Boss 10', clearCount: 14, partySize: 16, value: '$10000', weeklyMesos: '$70000' },
-    { name: 'Boss 11', clearCount: 13, partySize: 17, value: '$11000', weeklyMesos: '$77000' },
-    { name: 'Boss 12', clearCount: 15, partySize: 18, value: '$12000', weeklyMesos: '$84000' },
-    { name: 'Boss 13', clearCount: 10, partySize: 12, value: '$13000', weeklyMesos: '$91000' },
-    { name: 'Boss 14', clearCount: 11, partySize: 14, value: '$14000', weeklyMesos: '$98000' }
+    { name: 'Boss1', clearCount: 0, partySize: 1, dailyMeso: '$1000', weeklyMeso: '$7000', baseDailyIncome: '$1000' },
+    { name: 'Boss2', clearCount: 0, partySize: 1, dailyMeso: '$2000', weeklyMeso: '$14000', baseDailyIncome: '$2000' },
+    { name: 'Boss3', clearCount: 0, partySize: 1, dailyMeso: '$3000', weeklyMeso: '$21000', baseDailyIncome: '$3000' },
+    { name: 'Boss4', clearCount: 0, partySize: 1, dailyMeso: '$4000', weeklyMeso: '$28000', baseDailyIncome: '$4000' },
+    { name: 'Boss5', clearCount: 0, partySize: 1, dailyMeso: '$5000', weeklyMeso: '$35000', baseDailyIncome: '$5000' },
+    { name: 'Boss6', clearCount: 0, partySize: 1, dailyMeso: '$6000', weeklyMeso: '$42000', baseDailyIncome: '$6000' },
+    { name: 'Boss7', clearCount: 0, partySize: 1, dailyMeso: '$7000', weeklyMeso: '$49000', baseDailyIncome: '$7000' },
+    { name: 'Boss8', clearCount: 0, partySize: 1, dailyMeso: '$8000', weeklyMeso: '$56000', baseDailyIncome: '$8000' },
+    { name: 'Boss9', clearCount: 0, partySize: 1, dailyMeso: '$9000', weeklyMeso: '$63000', baseDailyIncome: '$9000' },
+    { name: 'Boss10', clearCount: 0, partySize: 1, dailyMeso: '$10000', weeklyMeso: '$70000', baseDailyIncome: '$10000' },
+    { name: 'Boss11', clearCount: 0, partySize: 1, dailyMeso: '$11000', weeklyMeso: '$77000', baseDailyIncome: '$11000' },
+    { name: 'Boss12', clearCount: 0, partySize: 1, dailyMeso: '$12000', weeklyMeso: '$84000', baseDailyIncome: '$12000' },
+    { name: 'Boss13', clearCount: 0, partySize: 1, dailyMeso: '$13000', weeklyMeso: '$91000', baseDailyIncome: '$13000' },
+    { name: 'Boss14', clearCount: 0, partySize: 1, dailyMeso: '$14000', weeklyMeso: '$98000', baseDailyIncome: '$14000' }
   ]);
 
   return (
@@ -34,18 +32,16 @@ const Bosses = () => {
         <table>
           <thead>
             <tr> {/* Column Headers */}
-              <th>Select</th>
               <th>Boss Name</th>
-              <th>Clear Count</th>
+              <th>Cleared</th>
               <th>Party Size</th>
-              <th>Boss Value</th>
-              <th>Weekly Mesos</th>
+              <th className="fade-in-column">Daily Income</th>
+              <th className="fade-in-column">Weekly Income</th>
             </tr>
           </thead>
           <tbody>
             {bossData.map((boss, index) => (
               <tr key={index}> {/* Column data */}
-                <td><input type="checkbox" /></td>
                 <td>{boss.name}</td>
                 <td>
                   <select
@@ -63,8 +59,8 @@ const Bosses = () => {
                     {createPartySizeOptions()}
                   </select>
                 </td>
-                <td>{boss.value}</td>
-                <td>{boss.weeklyMesos}</td>
+                <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>{boss.dailyMeso}</td>
+                <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>{boss.weeklyMeso}</td>
               </tr>
             ))}
           </tbody>

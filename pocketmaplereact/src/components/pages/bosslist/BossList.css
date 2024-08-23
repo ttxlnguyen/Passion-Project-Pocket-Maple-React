@@ -1,6 +1,6 @@
 .boss-list {
   margin: 20px;
-  margin-top: 90px;
+  margin-top: 110px;
   padding: 10px;
   border: 1px solid #898989;
   border-radius: 4px;
@@ -33,6 +33,11 @@ th, td {
   border-bottom: 1px solid #454545;
 }
 
+td select {
+  display: block;
+  margin: 0 auto;
+}
+
 th {
   background-color: #121212;
 }
@@ -62,4 +67,67 @@ select {
 
 input[type="checkbox"] {
   margin: 0;
+}
+
+/* Reduce the width of the "Cleared" column */
+th:nth-child(2), td:nth-child(2) {
+  width: 125px;
+}
+
+/* Reduce the width of the "Party Size" column */
+th:nth-child(3), td:nth-child(3) {
+  width: 125px;
+}
+
+/* Reduce the width of the "Daily" column */
+th:nth-child(4), td:nth-child(4) {
+  width: 175px;
+}
+
+/* Reduce the width of the "Weekly" column */
+th:nth-child(5), td:nth-child(5) {
+  width: 172px;
+}
+
+/* Align the "Clear Count" column to the right */
+th:nth-child(2), td:nth-child(2) {
+  text-align: right;
+}
+
+/* Align the "Party Size" column to the right */
+th:nth-child(3), td:nth-child(3) {
+  text-align: right;
+}
+
+/* Align the "Daily Income" column to the right */
+th:nth-child(4), td:nth-child(4) {
+  text-align: right;
+}
+
+/* Align the "Weekly Income" column to the right */
+th:nth-child(5), td:nth-child(5) {
+  text-align: right;
+}
+
+td:nth-child(2) select {
+  margin-left: auto; /* Pushes the select element to the right */
+  margin-right: 0; /* No margin on the right side */
+}
+
+td:nth-child(3) select {
+  margin-left: auto; /* Pushes the select element to the right */
+  margin-right: 0; /* No margin on the right side */
+}
+
+/* Styles for fading in and out */
+.fade-in-column {
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
 }
