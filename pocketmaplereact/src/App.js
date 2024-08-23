@@ -4,19 +4,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar.jsx";
 import Home from "./components/pages/Home";
 import Characters from "./components/pages/Characters";
-import Bosses from "./components/pages/bosslist/BossList";
+import Bosses from "./components/pages/bosslist/BossList.jsx";
 
 const App = () => {
   return (
     <Router>
-      {/* <Navbar /> */}
-      <NavBar />
+      <NavBar /> {/* Navigation bar component */}
       <main className="main-content">
-        <Routes>
-          {/* Define other routes that you need*/}
+        <Routes> {/* Define routes*/}
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters />} />
-          <Route path="/bosses" element={<Bosses />} />
+          <Route path="/bosses" element={<Bosses />} /> {/* Route to Bosses component */}
         </Routes>
       </main>
     </Router>
