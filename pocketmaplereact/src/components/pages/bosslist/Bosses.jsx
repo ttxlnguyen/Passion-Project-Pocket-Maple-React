@@ -59,7 +59,9 @@ const Bosses = () => {
                     {createPartySizeOptions()}
                   </select>
                 </td>
-                <td className="fade-in-column">${parseFloat(boss.dailyMeso).toLocaleString()}</td>
+                <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>
+                  ${boss.clearCount > 0 ? parseFloat(boss.dailyMeso).toLocaleString() : '0'}
+                </td>
                 <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>
                   ${parseFloat(boss.weeklyMeso).toLocaleString()}
                 </td>
