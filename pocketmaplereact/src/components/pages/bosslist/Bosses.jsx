@@ -77,7 +77,7 @@ const Bosses = () => {
           <table>
             <thead>
               <tr>
-                <th>Select</th>
+                <th></th>
                 <th>Boss Name</th>
                 <th>Cleared</th>
                 <th>Party Size</th>
@@ -131,7 +131,7 @@ const Bosses = () => {
           <table>
             <thead>
               <tr>
-                <th>Select</th>
+                <th></th>
                 <th>Boss Name</th>
                 <th className="party-size-column">Party Size</th>
                 <th className="weekly-income">Weekly Income</th>
