@@ -27,7 +27,7 @@ export const handleClearCountChange = (index, value, setBossData, bossData) => {
   setBossData(updatedBossData);
 };
 
-// Function to handle dropdown change for Party Size
+// Function to handle dropdown change for Party Size (Daily Bosses)
 export const handlePartySizeChange = (index, value, setBossData, bossData) => {
   const partySize = parseInt(value, 10);
   const updatedBossData = [...bossData];
@@ -47,4 +47,18 @@ export const handlePartySizeChange = (index, value, setBossData, bossData) => {
   }
   
   setBossData(updatedBossData);
+};
+
+// Function to handle dropdown change for Party Size (Weekly Bosses)
+export const handlePartySizeChangeWeekly = (index, value, setBossData, bossData) => {
+  const partySize = parseInt(value, 10);
+  const updatedData = [...bossData];
+
+  // Update party size
+  updatedData[index].partySize = partySize;
+
+  // Recalculate weekly income based on the new party size
+  updatedData[index].weeklyMeso = Math.round(updatedData[index].weeklyMeso / partySize);
+
+  setBossData(updatedData);
 };

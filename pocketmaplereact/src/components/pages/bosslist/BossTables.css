@@ -2,7 +2,7 @@
   margin: 20px;
   margin-top: 110px;
   padding: 10px;
-  border: 1px solid #898989;
+  border: 1px solid #000000;
   border-radius: 4px;
   background-color: #000000;
   overflow-x: auto;
@@ -20,6 +20,15 @@
   overflow-x: auto;
 }
 
+.daily-bosses-table,
+.weekly-bosses-table {
+  border: 1px solid #898989;
+  border-radius: 4px;
+  background-color: #000000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -35,7 +44,15 @@ th, td {
 
 td select {
   display: block;
-  margin: 0 auto;
+  margin: 0;
+  padding: 2px;
+  width: 60px;
+  box-sizing: border-box;
+  background-color: #222222;
+  color: #919191;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  float: right;
 }
 
 th {
@@ -59,9 +76,6 @@ select {
   color: #919191;
   border: 1px solid #454545;
   border-radius: 4px;
-  padding: 4px;
-  width: 60px;
-  box-sizing: border-box;
   font-size: 0.9rem;
 }
 
@@ -69,46 +83,28 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-th:nth-child(2), td:nth-child(2) {
-  width: 125px;
-}
-
-th:nth-child(3), td:nth-child(3) {
-  width: 125px;
-}
-
-th:nth-child(4), td:nth-child(4) {
-  width: 175px;
-}
-
-th:nth-child(5), td:nth-child(5) {
-  width: 175px;
+th:nth-child(1), td:nth-child(1) {
+  width: 60px;
+  text-align: left;
 }
 
 th:nth-child(2), td:nth-child(2) {
+  text-align: left;
+}
+
+th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
+  width: 125px;
   text-align: right;
 }
 
-th:nth-child(3), td:nth-child(3) {
+th:nth-child(5), td:nth-child(5), th:nth-child(6), td:nth-child(6) {
+  width: 150px;
   text-align: right;
 }
 
-th:nth-child(4), td:nth-child(4) {
-  text-align: right;
-}
-
-th:nth-child(5), td:nth-child(5) {
-  text-align: right;
-}
-
-td:nth-child(2) select {
+td:nth-child(1) input[type="checkbox"] {
   margin-left: auto;
-  margin-right: 0;
-}
-
-td:nth-child(3) select {
-  margin-left: auto;
-  margin-right: 0;
+  margin-right: auto;
 }
 
 .fade-in-column {
@@ -121,4 +117,8 @@ td:nth-child(3) select {
 
 .fade-out {
   opacity: 0;
+}
+
+.weekly-bosses-table .party-size-column {
+  padding-right: 100px;
 }
