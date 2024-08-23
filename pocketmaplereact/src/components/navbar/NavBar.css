@@ -6,7 +6,7 @@
   background-color: var(--header-background-color, #0f0f0f);
   z-index: var(--z-fixed);
 }
-  
+
 .nav {
   display: flex;
   align-items: center;
@@ -16,21 +16,21 @@
   margin: 1rem;
   padding-left: 1rem;
 }
-  
+
 .nav__logo {
   color: var(--first-color);
   transition: color 0.4s;
   font-size: var(--h2-font-size);
   font-family: var(--second-font);
 }
-  
+
 .nav__toggle,
 .nav__close {
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
 }
-  
+
 .nav__cta {
   background-color: var(--first-color);
   color: var(--title-color);
@@ -40,7 +40,7 @@
   transition: background-color 0.3s ease;
   padding: 0.75rem 1.5rem;
 }
-  
+
 @media screen and (max-width: 1150px) {
   .nav__menu {
     position: fixed;
