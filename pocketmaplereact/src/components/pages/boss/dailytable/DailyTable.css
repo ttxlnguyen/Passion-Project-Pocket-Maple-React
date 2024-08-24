@@ -1,5 +1,5 @@
 /* Styles for the boss list container */
-.boss-list {
+.boss-list-daily {
   margin: 20px;
   margin-top: 110px;
   padding: 10px;
@@ -10,11 +10,11 @@
 }
 
 /* Styles for the heading within the boss list */
-.boss-list h2 {
+.boss-list-daily h2 {
   color: #d3d3d3;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 1.5rem;
 }
 

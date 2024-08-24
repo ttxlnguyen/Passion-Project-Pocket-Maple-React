@@ -1,98 +1,102 @@
-.boss-list {
-    margin: 20px;
-    margin-top: 110px;
-    padding: 10px;
-    border: 1px solid #898989;
-    border-radius: 4px;
-    background-color: #000000;
-    overflow-x: auto;
-  }
-  
-  .boss-list h2 {
-    color: #d3d3d3;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-  }
-  
-  .table-wrapper {
-    overflow-x: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #222222;
-    color: #919191;
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #454545;
-  }
-  
-  td select {
-    display: block;
-    margin: 0 auto;
-  }
-  
-  th {
-    background-color: #121212;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #121212;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #191919;
-  }
-  
-  tr:hover {
-    background-color: #303030;
-  }
-  
-  select {
-    background-color: #222222;
-    color: #919191;
-    border: 1px solid #454545;
-    border-radius: 4px;
-    padding: 4px;
-    width: 60px;
-    box-sizing: border-box;
-    font-size: 0.9rem;
-  }
-  
-  input[type="checkbox"] {
-    margin: 0;
-  }
-  
-  th:nth-child(2), td:nth-child(2) {
-    width: 125px;
-  }
-  
-  th:nth-child(3), td:nth-child(3) {
-    width: 175px;
-  }
-  
-  th:nth-child(2), td:nth-child(2) {
-    text-align: right;
-  }
-  
-  th:nth-child(3), td:nth-child(3) {
-    text-align: right;
-  }
-  
-  .fade-in-column {
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .fade-in {
-    opacity: 1;
-  }
-  
-  .fade-out {
-    opacity: 0;
-  }  
+.boss-list-weekly {
+  margin: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #898989;
+  border-radius: 4px;
+  background-color: #000000;
+  overflow-x: auto;
+}
+
+.boss-list-weekly h2 {
+  color: #d3d3d3;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #222222;
+  color: #919191;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #454545;
+}
+
+td select {
+  display: block;
+  margin: 0 auto;
+}
+
+th {
+  background-color: #121212;
+}
+
+tr:nth-child(even) {
+  background-color: #121212;
+}
+
+tr:nth-child(odd) {
+  background-color: #191919;
+}
+
+tr:hover {
+  background-color: #303030;
+}
+
+select {
+  background-color: #222222;
+  color: #919191;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  padding: 4px;
+  width: 60px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  width: 125px;
+}
+
+th:nth-child(3), td:nth-child(3) {
+  width: 175px;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  text-align: right;
+}
+
+th:nth-child(3), td:nth-child(3) {
+  text-align: right;
+}
+
+.fade-in-column {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}  
+
+ .weekly-table {
+  margin-top: 40px; /* Add some space above the weekly table */
+}

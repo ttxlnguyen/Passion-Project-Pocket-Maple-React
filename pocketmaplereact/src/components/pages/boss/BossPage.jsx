@@ -1,30 +1,50 @@
 import React from 'react';
-import './dailytable/DailyTable.css';
+import './BossPage.css';
 import DailyTable from './dailytable/DailyTable';
+import WeeklyTable from './weeklytable/WeeklyTable';
 import {
   createClearCountOptions,
-  createPartySizeOptions
+  createPartySizeOptionsDaily
 } from './dailytable/DailyTableHelper';
 import {
   handleClearCountChange,
-  handlePartySizeChange
+  handlePartySizeChangeDaily
 } from './dailytable/DailyTableLogic';
+import {
+  createPartySizeOptionsWeekly
+} from './weeklytable/WeeklyTableHelper';
+import {
+  handlePartySizeChangeWeekly
+} from './weeklytable/WeeklyTableLogic';
 
-const BossPage = ({ bossData, setBossData }) => {
+const BossPage = ({ bossDataDaily, setBossDataDaily, bossDataWeekly, setBossDataWeekly }) => {
   return (
-    <div className="boss-list">
-      <h2>Daily Bosses</h2>
-      <div className="table-wrapper">
-        <DailyTable 
-          bossData={bossData} 
-          setBossData={setBossData} 
-          createClearCountOptions={createClearCountOptions} 
-          createPartySizeOptions={createPartySizeOptions} 
-          handleClearCountChange={handleClearCountChange} 
-          handlePartySizeChange={handlePartySizeChange} 
-        />
+    <div className="boss-page">
+      <div className="boss-list-daily">
+        <h2>Daily Bosses</h2>
+        <div className="daily-table-wrapper">
+          <DailyTable 
+            bossData={bossDataDaily} 
+            setBossData={setBossDataDaily} 
+            createClearCountOptions={createClearCountOptions} 
+            createPartySizeOptionsDaily={createPartySizeOptionsDaily} 
+            handleClearCountChange={handleClearCountChange} 
+            handlePartySizeChangeDaily={handlePartySizeChangeDaily} 
+          />
+        </div>
       </div>
-    </div>
+      <div className="boss-list-weekly">
+      <h2>Weekly Bosses</h2>
+        <div className="weekly-table-wrapper">
+          <WeeklyTable 
+            bossData={bossDataWeekly} 
+            setBossData={setBossDataWeekly} 
+            createPartySizeOptionsWeekly={createPartySizeOptionsWeekly} 
+            handlePartySizeChangeWeekly={handlePartySizeChangeWeekly} 
+          />
+        </div>
+      </div>
+    </div>  
   );
 };
 

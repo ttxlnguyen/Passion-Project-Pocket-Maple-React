@@ -1,34 +1,34 @@
 // Function to handle dropdown change for Clear Count
-export const handleClearCountChange = (index, value, setBossData, bossData) => {
+export const handleClearCountChange = (index, value, setBossDataDaily, bossData) => {
   const clearCount = parseInt(value, 10);
-  const updatedBossData = [...bossData];
+  const updatedBossDataDaily = [...bossData];
     
-  updatedBossData[index].clearCount = clearCount;
+  updatedBossDataDaily[index].clearCount = clearCount;
     
   // Recalculate weekly income based on daily income and clear count
-  updatedBossData[index].weeklyMeso = Math.round(updatedBossData[index].dailyMeso * clearCount);
+  updatedBossDataDaily[index].weeklyMeso = Math.round(updatedBossDataDaily[index].dailyMeso * clearCount);
     
-  setBossData(updatedBossData);
+  setBossDataDaily(updatedBossDataDaily);
 };
   
 // Function to handle dropdown change for Party Size
-export const handlePartySizeChange = (index, value, setBossData, bossData) => {
+export const handlePartySizeChangeDaily = (index, value, setBossDataDaily, bossData) => {
   const partySize = parseInt(value, 10);
-  const updatedBossData = [...bossData];
+  const updatedBossDataDaily = [...bossData];
 
-  const originalDailyMeso = updatedBossData[index].originalDailyMeso || updatedBossData[index].dailyMeso;
+  const originalDailyMeso = updatedBossDataDaily[index].originalDailyMeso || updatedBossDataDaily[index].dailyMeso;
 
   // Update party size
-  updatedBossData[index].partySize = partySize;
+  updatedBossDataDaily[index].partySize = partySize;
 
   // Recalculate daily and weekly income based on the new party size
-  updatedBossData[index].dailyMeso = Math.round(originalDailyMeso / partySize);
-  updatedBossData[index].weeklyMeso = Math.round(updatedBossData[index].dailyMeso * updatedBossData[index].clearCount);
+  updatedBossDataDaily[index].dailyMeso = Math.round(originalDailyMeso / partySize);
+  updatedBossDataDaily[index].weeklyMeso = Math.round(updatedBossDataDaily[index].dailyMeso * updatedBossDataDaily[index].clearCount);
 
   // Store the original daily meso if not already stored
-  if (!updatedBossData[index].originalDailyMeso) {
-    updatedBossData[index].originalDailyMeso = originalDailyMeso;
+  if (!updatedBossDataDaily[index].originalDailyMeso) {
+    updatedBossDataDaily[index].originalDailyMeso = originalDailyMeso;
   }
 
-  setBossData(updatedBossData);
+  setBossDataDaily(updatedBossDataDaily);
 };
