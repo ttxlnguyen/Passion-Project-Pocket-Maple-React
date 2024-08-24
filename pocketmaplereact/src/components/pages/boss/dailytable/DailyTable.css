@@ -1,3 +1,4 @@
+/* Styles for the boss list container */
 .boss-list {
   margin: 20px;
   margin-top: 110px;
@@ -8,6 +9,7 @@
   overflow-x: auto;
 }
 
+/* Styles for the heading within the boss list */
 .boss-list h2 {
   color: #d3d3d3;
   text-align: center;
@@ -16,10 +18,12 @@
   font-size: 1.5rem;
 }
 
+/* Wrapper for the table to handle overflow */
 .table-wrapper {
   overflow-x: auto;
 }
 
+/* Styles for the table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -27,21 +31,25 @@ table {
   color: #919191;
 }
 
+/* Styles for table header and cells */
 th, td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #454545;
 }
 
+/* Styles for select elements within table cells */
 td select {
   display: block;
   margin: 0 auto;
 }
 
+/* Styles for table headers */
 th {
   background-color: #121212;
 }
 
+/* Styles for table rows based on odd/even indexing */
 tr:nth-child(even) {
   background-color: #121212;
 }
@@ -50,10 +58,12 @@ tr:nth-child(odd) {
   background-color: #191919;
 }
 
+/* Hover effect for table rows */
 tr:hover {
   background-color: #303030;
 }
 
+/* Styles for select elements */
 select {
   background-color: #222222;
   color: #919191;
@@ -65,10 +75,12 @@ select {
   font-size: 0.9rem;
 }
 
+/* Styles for checkbox inputs */
 input[type="checkbox"] {
   margin: 0;
 }
 
+/* Specific widths for table columns */
 th:nth-child(2), td:nth-child(2) {
   width: 125px;
 }
@@ -85,22 +97,15 @@ th:nth-child(5), td:nth-child(5) {
   width: 175px;
 }
 
-th:nth-child(2), td:nth-child(2) {
-  text-align: right;
-}
-
-th:nth-child(3), td:nth-child(3) {
-  text-align: right;
-}
-
-th:nth-child(4), td:nth-child(4) {
-  text-align: right;
-}
-
+/* Right-align text in specific columns */
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4),
 th:nth-child(5), td:nth-child(5) {
   text-align: right;
 }
 
+/* Align selects in specific columns */
 td:nth-child(2) select {
   margin-left: auto;
   margin-right: 0;
@@ -111,6 +116,7 @@ td:nth-child(3) select {
   margin-right: 0;
 }
 
+/* Fade-in and fade-out animations for columns */
 .fade-in-column {
   transition: opacity 0.5s ease-in-out;
 }
