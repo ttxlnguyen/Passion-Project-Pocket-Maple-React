@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import {
-  createClearCountOptions,
+  createClearCountOptionsDaily,
   createPartySizeOptionsDaily
 } from './DailyTableHelper';
 
 import {
-  handleClearCountChange,
+  handleClearCountChangeDaily,
   handlePartySizeChangeDaily
 } from './DailyTableLogic';
 
@@ -29,14 +29,14 @@ const DailyTable = () => {
     { name: 'Boss14', clearCount: 0, partySize: 1, dailyMeso: 14000, weeklyMeso: 0, isChecked: false },
   ]);
 
-  const handleCheckboxChange = (index) => {
+  const handleCheckboxChangeDaily = (index) => {
     const updatedBossDataDaily = [...bossDataDaily];
     const isChecked = !updatedBossDataDaily[index].isChecked;
 
     // Reset clearCount to 0 if unchecked
     if (!isChecked) {
       updatedBossDataDaily[index].clearCount = 0;
-      updatedBossDataDaily[index].weeklyMeso = 0; // Reset weekly income as well
+      updatedBossDataDaily[index].weeklyMeso = 0;
     }
 
     updatedBossDataDaily[index].isChecked = isChecked;
@@ -62,17 +62,17 @@ const DailyTable = () => {
               <input
                 type="checkbox"
                 checked={boss.isChecked}
-                onChange={() => handleCheckboxChange(index)}
+                onChange={() => handleCheckboxChangeDaily(index)}
               />
             </td>
             <td>{boss.name}</td>
             <td className={`fade-in-column ${boss.isChecked ? 'fade-in' : 'fade-out'}`}>
               <select
                 value={boss.clearCount}
-                onChange={(e) => handleClearCountChange(index, e.target.value, setBossDataDaily, bossDataDaily)}
+                onChange={(e) => handleClearCountChangeDaily(index, e.target.value, setBossDataDaily, bossDataDaily)}
                 disabled={!boss.isChecked}
               >
-                {createClearCountOptions()}
+                {createClearCountOptionsDaily()}
               </select>
             </td>
             <td className={`fade-in-column ${boss.isChecked ? 'fade-in' : 'fade-out'}`}>

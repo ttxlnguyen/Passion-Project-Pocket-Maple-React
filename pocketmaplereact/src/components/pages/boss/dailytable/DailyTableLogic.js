@@ -1,5 +1,5 @@
 // Function to handle dropdown change for Clear Count
-export const handleClearCountChange = (index, value, setBossDataDaily, bossData) => {
+export const handleClearCountChangeDaily = (index, value, setBossDataDaily, bossData) => {
   const clearCount = parseInt(value, 10);
   const updatedBossDataDaily = [...bossData];
     

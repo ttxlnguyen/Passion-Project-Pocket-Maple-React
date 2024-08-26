@@ -1,6 +1,5 @@
 .boss-list-weekly {
   margin: 20px;
-  margin-top: 20px;
   padding: 10px;
   border: 1px solid #898989;
   border-radius: 4px;
@@ -81,6 +80,6 @@ input[type="checkbox"] {
   opacity: 0;
 }  
 
- .weekly-table {
+.weekly-table {
   margin-top: 40px; /* Add some space above the weekly table */
 }

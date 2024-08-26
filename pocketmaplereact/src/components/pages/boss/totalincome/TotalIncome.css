@@ -1,0 +1,44 @@
+.total-income {
+  margin: 20px;
+  margin-top: 10px;
+  background-color: #333333;
+  border: 1px solid #898989;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.chart-container {
+  margin-top: 110px;
+}
+
+.total-income table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #222222;
+  color: #919191;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.total-income th, .total-income td {
+  padding: 10px;
+  text-align: center;
+}
+
+.total-income th {
+  border-bottom: 1px solid #898989;
+}
+  
+.total-income td {
+  border-top: 1px solid #898989;
+}
+
+.total-income tr:nth-child(odd) {
+  background-color: #191919;
+}
+
+.total-income tr:nth-child(even) {
+  background-color: #121212;
+}

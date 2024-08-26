@@ -1,5 +1,5 @@
 // Function to create dropdown options for Clear Count (1-7)
-export const createClearCountOptions = () => {
+export const createClearCountOptionsDaily = () => {
   return Array.from({ length: 8 }, (_, i) => (
   <option key={i} value={i}>{i}</option>
   ));

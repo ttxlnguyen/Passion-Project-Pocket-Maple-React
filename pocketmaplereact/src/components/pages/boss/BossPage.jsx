@@ -2,12 +2,13 @@ import React from 'react';
 import './BossPage.css';
 import DailyTable from './dailytable/DailyTable';
 import WeeklyTable from './weeklytable/WeeklyTable';
+import TotalIncome from './totalincome/TotalIncome'; // Import the TotalIncome component
 import {
-  createClearCountOptions,
+  createClearCountOptionsDaily,
   createPartySizeOptionsDaily
 } from './dailytable/DailyTableHelper';
 import {
-  handleClearCountChange,
+  handleClearCountChangeDaily,
   handlePartySizeChangeDaily
 } from './dailytable/DailyTableLogic';
 import {
@@ -20,21 +21,28 @@ import {
 const BossPage = ({ bossDataDaily, setBossDataDaily, bossDataWeekly, setBossDataWeekly }) => {
   return (
     <div className="boss-page">
+      <div className='chart-container'></div>
+      <div className='total-income'>
+        <h2>Total Income</h2>
+        <div className='total-income-wrapper'>
+          <TotalIncome bossDataDaily={bossDataDaily} />
+        </div>
+      </div>
       <div className="boss-list-daily">
         <h2>Daily Bosses</h2>
         <div className="daily-table-wrapper">
           <DailyTable 
             bossData={bossDataDaily} 
             setBossData={setBossDataDaily} 
-            createClearCountOptions={createClearCountOptions} 
+            createClearCountOptions={createClearCountOptionsDaily} 
             createPartySizeOptionsDaily={createPartySizeOptionsDaily} 
-            handleClearCountChange={handleClearCountChange} 
+            handleClearCountChange={handleClearCountChangeDaily} 
             handlePartySizeChangeDaily={handlePartySizeChangeDaily} 
           />
         </div>
       </div>
       <div className="boss-list-weekly">
-      <h2>Weekly Bosses</h2>
+        <h2>Weekly Bosses</h2>
         <div className="weekly-table-wrapper">
           <WeeklyTable 
             bossData={bossDataWeekly} 
