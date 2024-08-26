@@ -90,7 +90,11 @@
 }
 
 /* Right-align text & width in specific columns */
-.boss-list-daily th:nth-child(5), td:nth-child(5),
+.boss-list-daily th:nth-child(5), td:nth-child(5) {
+  width: 125px;
+  text-align: right;
+}
+
 .boss-list-daily th:nth-child(6), td:nth-child(6) {
   width: 175px !important;
   text-align: right;

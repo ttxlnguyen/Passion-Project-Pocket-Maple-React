@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TotalIncome from '../totalincome/TotalIncome';
 import {
   createClearCountOptionsDaily,
@@ -8,10 +8,12 @@ import {
   handleClearCountChangeDaily,
   handlePartySizeChangeDaily
 } from './DailyTableLogic';
+import { saveData, loadData } from '../../../../utils/DataStorage';
 import './DailyTable.css';
 
 const DailyTable = () => {
-  const [bossDataDaily, setBossDataDaily] = useState([
+  // Load initial state from localStorage or use default
+  const [bossDataDaily, setBossDataDaily] = useState(() => loadData() || [
     { name: 'Boss1', clearCount: 0, partySize: 1, dailyMeso: 1000, weeklyMeso: 0, isChecked: false },
     { name: 'Boss2', clearCount: 0, partySize: 1, dailyMeso: 2000, weeklyMeso: 0, isChecked: false },
     { name: 'Boss3', clearCount: 0, partySize: 1, dailyMeso: 3000, weeklyMeso: 0, isChecked: false },
@@ -28,11 +30,15 @@ const DailyTable = () => {
     { name: 'Boss14', clearCount: 0, partySize: 1, dailyMeso: 14000, weeklyMeso: 0, isChecked: false },
   ]);
 
+  useEffect(() => {
+    // Save data to localStorage whenever bossDataDaily changes
+    saveData(bossDataDaily);
+  }, [bossDataDaily]);
+
   const handleCheckboxChangeDaily = (index) => {
     const updatedBossDataDaily = [...bossDataDaily];
     const isChecked = !updatedBossDataDaily[index].isChecked;
 
-    // Reset clearCount to 0 if unchecked
     if (!isChecked) {
       updatedBossDataDaily[index].clearCount = 0;
       updatedBossDataDaily[index].weeklyMeso = 0;

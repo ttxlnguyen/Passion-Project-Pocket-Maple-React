@@ -2,7 +2,6 @@ import React from 'react';
 import './BossPage.css';
 import DailyTable from './dailytable/DailyTable';
 import WeeklyTable from './weeklytable/WeeklyTable';
-import TotalIncome from './totalincome/TotalIncome'; // Import the TotalIncome component
 import {
   createClearCountOptionsDaily,
   createPartySizeOptionsDaily
