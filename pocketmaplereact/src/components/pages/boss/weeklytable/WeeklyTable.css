@@ -35,7 +35,7 @@ th, td {
 
 td select {
   display: block;
-  margin: 0 auto;
+  margin-left: 0 auto;
 }
 
 th {
@@ -67,22 +67,6 @@ select {
 
 input[type="checkbox"] {
   margin: 0;
-}
-
-th:nth-child(2), td:nth-child(2) {
-  width: 125px;
-}
-
-th:nth-child(3), td:nth-child(3) {
-  width: 175px;
-}
-
-th:nth-child(2), td:nth-child(2) {
-  text-align: right;
-}
-
-th:nth-child(3), td:nth-child(3) {
-  text-align: right;
 }
 
 .fade-in-column {

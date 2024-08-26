@@ -46,7 +46,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    background-color: hsla(0, 0%, 6%, 0.2);
+    background-color: #0f0f0f33;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     width: 80%;
@@ -113,7 +113,7 @@
   position: fixed;
   top: 0;
   right: -100%;
-  background-color: hsla(0, 0%, 6%, 0.2);
+  background-color: #0f0f0f33;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   width: 80%;

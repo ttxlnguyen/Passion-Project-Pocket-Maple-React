@@ -18,35 +18,36 @@
   font-size: 1.5rem;
 }
 
-/* Wrapper for the table to handle overflow */
-.table-wrapper {
-  overflow-x: auto;
-}
-
 /* Styles for the table */
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: #222222;
   color: #919191;
+  table-layout: fixed;
+}
+
+/* Wrapper for the table to handle overflow */
+.table-wrapper {
+  overflow-x: auto;
 }
 
 /* Styles for table header and cells */
 th, td {
-  padding: 12px;
+  padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #454545;
+}
+
+td:nth-child(3) select,
+td:nth-child(4) select {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Styles for select elements within table cells */
 td select {
   display: block;
-  margin: 0 auto;
-}
-
-/* Styles for table headers */
-th {
-  background-color: #121212;
+  margin-left: 0;
 }
 
 /* Styles for table rows based on odd/even indexing */
@@ -63,57 +64,43 @@ tr:hover {
   background-color: #303030;
 }
 
-/* Styles for select elements */
-select {
-  background-color: #222222;
-  color: #919191;
-  border: 1px solid #454545;
-  border-radius: 4px;
-  padding: 4px;
-  width: 60px;
-  box-sizing: border-box;
-  font-size: 0.9rem;
-}
-
 /* Styles for checkbox inputs */
 input[type="checkbox"] {
-  margin: 0;
+  cursor: pointer;
 }
 
 /* Specific widths for table columns */
 th:nth-child(2), td:nth-child(2) {
-  width: 125px;
+  width: 175px !important;
 }
 
-th:nth-child(3), td:nth-child(3) {
-  width: 125px;
-}
-
-th:nth-child(4), td:nth-child(4) {
-  width: 175px;
-}
-
-th:nth-child(5), td:nth-child(5) {
-  width: 175px;
-}
-
-/* Right-align text in specific columns */
-th:nth-child(2), td:nth-child(2),
 th:nth-child(3), td:nth-child(3),
-th:nth-child(4), td:nth-child(4),
-th:nth-child(5), td:nth-child(5) {
+th:nth-child(4), td:nth-child(4) {
+  width: 110px;
+}
+
+/* Center-align text & width in specific columns */
+th:nth-child(1), td:nth-child(1) {
+  width: 30px;
+  text-align: center;
+}
+
+/* Left-align text in specific columns */
+th:nth-child(2), td:nth-child(2) {
+  text-align: left;
+}
+
+/* Center-align text in specific columns */
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4) {
+  text-align: center;
+}
+
+/* Right-align text & width in specific columns */
+th:nth-child(5), td:nth-child(5),
+th:nth-child(6), td:nth-child(6) {
+  min-width: 175px;
   text-align: right;
-}
-
-/* Align selects in specific columns */
-td:nth-child(2) select {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-td:nth-child(3) select {
-  margin-left: auto;
-  margin-right: 0;
 }
 
 /* Fade-in and fade-out animations for columns */
@@ -127,4 +114,5 @@ td:nth-child(3) select {
 
 .fade-out {
   opacity: 0;
+  pointer-events: none; /* Prevent interaction with elements that are faded out */
 }
