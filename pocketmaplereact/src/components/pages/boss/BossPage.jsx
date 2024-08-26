@@ -22,12 +22,6 @@ const BossPage = ({ bossDataDaily, setBossDataDaily, bossDataWeekly, setBossData
   return (
     <div className="boss-page">
       <div className='chart-container'></div>
-      <div className='total-income'>
-        <h2>Total Income</h2>
-        <div className='total-income-wrapper'>
-          <TotalIncome bossDataDaily={bossDataDaily} />
-        </div>
-      </div>
       <div className="boss-list-daily">
         <h2>Daily Bosses</h2>
         <div className="daily-table-wrapper">

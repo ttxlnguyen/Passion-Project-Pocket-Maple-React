@@ -18,12 +18,12 @@
 }
 
 /* Wrapper for the table to handle overflow */
-.table-wrapper {
+.boss-list-daily .table-wrapper {
   overflow-x: auto;
 }
 
 /* Styles for the table */
-table {
+.boss-list-daily table {
   width: 100%;
   border-collapse: collapse;
   background-color: #222222;
@@ -31,79 +31,73 @@ table {
   table-layout: fixed;
 }
 
-/* Styles for table header and cells */
-th, td {
-  padding: 10px;
-  text-align: left;
-}
-
-td:nth-child(3) select,
-td:nth-child(4) select {
+.boss-list-daily td:nth-child(3) select,
+.boss-list-daily td:nth-child(4) select {
   display: block;
   margin: 0 auto;
 }
 
 /* Styles for select elements within table cells */
-td select {
+.boss-list-daily td select {
   display: block;
   margin-left: 0;
 }
 
 /* Styles for table rows based on odd/even indexing */
-tr:nth-child(even) {
+.boss-list-daily tr:nth-child(even) {
   background-color: #121212;
 }
 
-tr:nth-child(odd) {
+.boss-list-daily tr:nth-child(odd) {
   background-color: #191919;
 }
 
 /* Hover effect for table rows */
-tr:hover {
+.boss-list-daily tr:hover {
   background-color: #303030;
 }
 
 /* Styles for checkbox inputs */
-input[type="checkbox"] {
+.boss-list-daily input[type="checkbox"] {
   cursor: pointer;
 }
 
 /* Specific widths for table columns */
-th:nth-child(2), td:nth-child(2) {
-  width: 220px !important;
+.boss-list-daily th:nth-child(2), td:nth-child(2) {
+  width: 100px !important;
 }
 
-th:nth-child(3), td:nth-child(3),
-th:nth-child(4), td:nth-child(4) {
+.boss-list-daily th:nth-child(3), td:nth-child(3),
+.boss-list-daily th:nth-child(4), td:nth-child(4) {
   width: 110px ;
 }
 
 /* Center-align text & width in specific columns */
-th:nth-child(1), td:nth-child(1) {
+.boss-list-daily th:nth-child(1), td:nth-child(1) {
   width: 30px;
   text-align: center;
 }
 
 /* Left-align text in specific columns */
-th:nth-child(2), td:nth-child(2) {
+.boss-list-daily th:nth-child(2), td:nth-child(2) {
   text-align: left;
 }
 
 /* Center-align text in specific columns */
-th:nth-child(3), td:nth-child(3),
-th:nth-child(4), td:nth-child(4) {
+.boss-list-daily th:nth-child(3), td:nth-child(3),
+.boss-list-daily th:nth-child(4), td:nth-child(4) {
   text-align: center;
 }
 
 /* Right-align text & width in specific columns */
-th:nth-child(5), td:nth-child(5),
-th:nth-child(6), td:nth-child(6) {
+.boss-list-daily th:nth-child(5), td:nth-child(5),
+.boss-list-daily th:nth-child(6), td:nth-child(6) {
   width: 175px !important;
   text-align: right;
 }
 
 /* Fade-in and fade-out animations for columns */
-.fade-in-column {
+.boss-list-daily .fade-in-column {
   transition: opacity 0.5s ease-in-out;
 }
 

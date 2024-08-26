@@ -1,14 +1,9 @@
 .total-income {
   margin: 20px;
-  margin-top: 10px;
   background-color: #333333;
   border: 1px solid #898989;
   border-radius: 4px;
   overflow-x: auto;
-}
-
-.chart-container {
-  margin-top: 110px;
 }
 
 .total-income table {
@@ -41,4 +36,14 @@
 
 .total-income tr:nth-child(even) {
   background-color: #121212;
+}
+
+.total-income th:nth-child(1), td:nth-child(1) {
+  width: 100px !important;
+  text-align: center;
+}
+
+.total-income th:nth-child(2), td:nth-child(2) {
+  width: 100px !important;
+  text-align: center;
 }

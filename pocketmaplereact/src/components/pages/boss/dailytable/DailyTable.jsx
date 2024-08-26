@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
+import TotalIncome from '../totalincome/TotalIncome';
 import {
   createClearCountOptionsDaily,
   createPartySizeOptionsDaily
 } from './DailyTableHelper';
-
 import {
   handleClearCountChangeDaily,
   handlePartySizeChangeDaily
 } from './DailyTableLogic';
-
 import './DailyTable.css';
 
 const DailyTable = () => {
@@ -44,56 +43,59 @@ const DailyTable = () => {
   };
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Boss Name</th>
-          <th>Cleared</th>
-          <th>Party Size</th>
-          <th className="fade-in-column">Daily Income</th>
-          <th className="fade-in-column">Weekly Income</th>
-        </tr>
-      </thead>
-      <tbody>
-        {bossDataDaily.map((boss, index) => (
-          <tr key={index}>
-            <td>
-              <input
-                type="checkbox"
-                checked={boss.isChecked}
-                onChange={() => handleCheckboxChangeDaily(index)}
-              />
-            </td>
-            <td>{boss.name}</td>
-            <td className={`fade-in-column ${boss.isChecked ? 'fade-in' : 'fade-out'}`}>
-              <select
-                value={boss.clearCount}
-                onChange={(e) => handleClearCountChangeDaily(index, e.target.value, setBossDataDaily, bossDataDaily)}
-                disabled={!boss.isChecked}
-              >
-                {createClearCountOptionsDaily()}
-              </select>
-            </td>
-            <td className={`fade-in-column ${boss.isChecked ? 'fade-in' : 'fade-out'}`}>
-              <select
-                value={boss.partySize}
-                onChange={(e) => handlePartySizeChangeDaily(index, e.target.value, setBossDataDaily, bossDataDaily)}
-                disabled={!boss.isChecked}
-              >
-                {createPartySizeOptionsDaily()}
-              </select>
-            </td>
-            <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>
-              ${boss.clearCount > 0 ? parseFloat(boss.dailyMeso).toLocaleString() : '0'}
-            </td>
-            <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>
-              ${parseFloat(boss.weeklyMeso).toLocaleString()}
-            </td>
+    <div>
+      <TotalIncome bossDataDaily={bossDataDaily} /> {/* Pass bossDataDaily to TotalIncome */}
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Boss Name</th>
+            <th>Cleared</th>
+            <th>Party Size</th>
+            <th className="fade-in-column">Daily Income</th>
+            <th className="fade-in-column">Weekly Income</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {bossDataDaily.map((boss, index) => (
+            <tr key={index}>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={boss.isChecked}
+                  onChange={() => handleCheckboxChangeDaily(index)}
+                />
+              </td>
+              <td>{boss.name}</td>
+              <td className={`fade-in-column ${boss.isChecked ? 'fade-in' : 'fade-out'}`}>
+                <select
+                  value={boss.clearCount}
+                  onChange={(e) => handleClearCountChangeDaily(index, e.target.value, setBossDataDaily, bossDataDaily)}
+                  disabled={!boss.isChecked}
+                >
+                  {createClearCountOptionsDaily()}
+                </select>
+              </td>
+              <td className={`fade-in-column ${boss.isChecked ? 'fade-in' : 'fade-out'}`}>
+                <select
+                  value={boss.partySize}
+                  onChange={(e) => handlePartySizeChangeDaily(index, e.target.value, setBossDataDaily, bossDataDaily)}
+                  disabled={!boss.isChecked}
+                >
+                  {createPartySizeOptionsDaily()}
+                </select>
+              </td>
+              <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>
+                ${boss.clearCount > 0 ? parseFloat(boss.dailyMeso).toLocaleString() : '0'}
+              </td>
+              <td className={`fade-in-column ${boss.clearCount > 0 ? 'fade-in' : 'fade-out'}`}>
+                ${parseFloat(boss.weeklyMeso).toLocaleString()}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
